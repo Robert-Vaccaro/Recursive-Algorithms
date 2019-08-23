@@ -1,0 +1,10 @@
+const sumOf = function(string1) {
+  string1 = string1.split('');
+  string1 = string1.reverse();
+  string1 = string1.join('');
+  console.log(string1)
+};
+
+let str = "hello";
+
+sumOf(str)
