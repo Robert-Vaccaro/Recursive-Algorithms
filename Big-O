@@ -1,0 +1,119 @@
+1.) 1.)Constant 2.)logarithmic 
+2.)Constant
+3.)Polynomial
+4.)Logarithmic
+5.)Polynomial
+6.)Polynomial
+7.)Polynomial
+8.)Exponential
+9.)Constant
+10.)Logarmithic
+11.)
+'use strict';
+
+function stepsToSolveHanoiT(height, srcP, desP, bufferP) {
+  if (height >= 1) {
+
+    // Move a tower of height-1 to the buffer peg, using the destination peg.
+    stepsToSolveHanoiT(height - 1, srcP, bufferP, desP);
+
+    // Move the remaining disk to the destination peg.
+    console.log('Move disk from Tower ', srcP, ' to Tower ', desP);
+
+    // Move the tower of `height-1` from the `buffer peg` to the `destination peg` using the `source peg`.        
+    stepsToSolveHanoiT(height - 1, bufferP, desP, srcP);
+  }
+  
+  return;
+}
+
+stepsToSolveHanoiT(3, "A", "C", "B");
+Seems Linear
+the output doubles in size of the input
+
+12-14.)
+1.) 
+const sumOf = function(list) {
+  let i;
+  let len = list;
+  for (i=-1;i<len+1;i++){
+    console.log(`${len} have jumped over the fence.`);
+    len = len-1;
+    if (len == 0){
+      console.log('All the sheep have jumped over the fence.')
+    }
+  };
+};
+
+let lst = 3;
+sumOf(lst)
+Big-O = Polynomial
+
+2.) 
+const sumOf = function(number, expon) {
+  if (expon>=0){
+    console.log(number**expon)
+  }
+  else{
+    console.log("Exponent needs to be positive")
+  }
+};
+
+let num = 10;
+let pow = 2;
+sumOf(num,pow)
+Big-O = Constant
+
+3.) 
+const sumOf = function(string1) {
+  string1 = string1.split('');
+  string1 = string1.reverse();
+  string1 = string1.join('');
+  console.log(string1)
+};
+
+let str = "hello";
+
+sumOf(str)
+Big-O = Constant
+
+4.)
+
+const triNum = function triangleNumber(n)
+{
+    return (n * (n + 1)) / 2;
+}
+
+let n = 2;
+
+console.log(triNum(n))
+Big-O = Constant
+
+5.)
+6.)
+const fibio = function(number1){
+
+number2 = number1 - 1;
+
+let finNum = number2 + number1;
+
+return finNum;
+};
+
+let num = 7;
+
+console.log(fibio(num));
+Big-O = Constant
+
+7.)
+const factorialize = function(num) {
+  if (num === 0 || num === 1)
+    return 1;
+  for (var i = num - 1; i >= 1; i--) {
+    num *= i;
+  }
+  return num;
+}
+console.log(factorialize(5));
+Big-O = Polynomial
+
