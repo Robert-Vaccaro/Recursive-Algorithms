@@ -1,0 +1,406 @@
+class _Node {
+    constructor(data, next) {
+        this.data = data;
+        this.next = next;
+    }
+       starTrek(data) {
+
+        if (this.top === null) {
+            this.top = new _Node(data, null);
+            return this.top;
+        }
+
+        const node = new _Node(data, this.top);
+        this.top = node;
+    }
+        pop() {
+        const node = this.top;
+        this.top = node.next;
+        return node.data;
+    }
+}
+
+
+starTrek(Kirk);
+starTrek(Spock);
+starTrek(McCoy);
+starTrek(Scotty);
+
+
+isEmpty = function() {
+    return this.count;
+}
+isEmpty(data);
+data.display();
+data.peek();
+
+remove McCoy:
+
+pop();
+pop();
+push(Scotty);
+
+
+Palindromes:
+
+function isPalindrome(s,i) {
+ return (i=i||0)<0||i>=s.length>>1||s[i]==s[s.length-1-i]&&isPalindrome(s,++i);
+}
+
+
+Matching parentheses in an expression:
+
+let isParenthesisMatching = (str) => {
+    let stack = [];
+
+    let open = {
+        '{': '}',
+        '[': ']',
+        '(': ')'
+    };
+
+    let closed = {
+        '}': true,
+        ']': true,
+        ')': true
+    }
+
+    for (let i = 0; i < str.length; i++) {
+
+        let char = str[i];
+
+        if (open[char]) {
+            stack.push(char);
+        } else if (closed[char]) {
+            if (open[stack.pop()] !== char) return false;
+        }
+    }
+    return stack.length === 0;
+}
+
+
+Sort Stack:
+
+'use strict';
+
+function Stack() {
+  this.top = null;
+}
+
+Stack.prototype.sort = function() {
+  var s2 = new Stack();
+
+  while (this.top) {
+    var tmp = this.pop();
+
+    while (s2.top && s2.top.data > tmp) {
+      s1.push(s2.pop());
+    }
+    s2.push(tmp);
+  }
+
+  console.log('Sorted stack = ', s2);
+}
+
+var s1 = new Stack();
+
+
+Create a queue using Singly linked list:
+
+// queue is initially empty
+var Queue = {front: null, back: null};
+
+// we will use a node to keep track of the elements
+// in the queue which is represented by a linked list
+function Node(data, next) {
+  this.data = data;
+  this.next = next;
+} 
+
+// add elements to queue in O(1) time
+function Enqueue(element) {
+  var N = new Node(element, null);
+  if (Queue.back === null) {
+    Queue.front = N;
+    Queue.back = N; 
+  } else { 
+    Queue.back.next = N; 
+    Queue.back = Queue.back.next;
+  } 
+}
+
+// remove first element from queue in O(1) time
+function Dequeue() {
+  if (Queue.front !== null) { 
+    var first = Queue.front;
+    Queue.front = Queue.front.next; 
+    return first.data;
+  } else {
+    if (Queue.back !== null) { Queue.back = null; }
+    return 'Cannot dequeue because queue is empty';
+  }
+}
+
+Enqueue('a'); 
+Enqueue('b'); 
+Enqueue('c'); 
+Dequeue();
+
+
+
+// implement stacks using plain arrays with push and pop functions
+var Stack1 = [];
+var Stack2 = [];
+
+// implement enqueue method by using only stacks
+// and the push and pop functions
+function Enqueue(element) {
+  Stack1.push(element);
+}
+
+// implement dequeue method by pushing all elements
+// from stack 1 into stack 2, which reverses the order
+// and then popping from stack 2
+function Dequeue() {
+  if (Stack2.length === 0) {
+    if (Stack1.length === 0) { return 'Cannot dequeue because queue is empty'; }
+    while (Stack1.length > 0) {
+      var p = Stack1.pop();
+      Stack2.push(p);
+    }
+  }
+  return Stack2.pop();
+}
+
+Enqueue('a');
+Enqueue('b');
+Enqueue('c');
+Dequeue(); 
+
+
+
+function dancer(name, sex) {
+    THIS.name = name;
+    This.sex = sex;
+}
+
+function that reads the dancer 's information into the program.
+
+function getdancers(males, females) {
+    var names = _names.split("\ n");
+    var names = _names.split("* *");
+    for (var i = 0; i & lt; names.length; ++i) {
+        Names[i] = Names[i].trim();
+    }
+    for (var i = 0; i & lt; names.length; ++i) {
+        var dancer = Names[i].split("");
+        var sex = dancer[0];
+        var name = dancer[1];
+        if (sex = = "female") {
+            Females.enqueue(New dancer(name, sex));
+        } else {
+            Males.enqueue(New dancer(name, sex))
+        }
+    }
+}
+
+function points the dancers to different queues according to their sex.
+
+function will make the male and female partner and announce the pairing result:
+
+
+    function dance(males, females) {
+        Console.log("This group of Partners is:")
+
+
+        while (!females.empty() & amp; & amp; !males.empty()) {
+
+
+            person = Females.dequeue();
+
+
+            Console.log("Female dancer is" + person.name);
+
+
+
+
+            person = Males.dequeue();
+
+
+            Console.log("Male dancer is" + person.name);
+
+
+        }
+
+
+    }
+
+function count() {
+
+
+    return this.dataStore.length;
+
+
+}
+
+
+
+function Queue() {
+
+
+    This.datastore = [];
+
+
+    This.enqueue = Enqueue;
+
+
+    This.dequeue = dequeue;
+
+
+    This.front = Front;
+
+
+    This.back = back;
+
+
+    this.tostring = toString;
+
+
+    This.empty = empty;
+
+
+    This.count = count;
+
+
+}
+
+
+function Enqueue(Element) {
+
+
+    This.dataStore.push(Element)
+
+
+}
+
+function Dequeue() {
+
+
+    return This.dataStore.shift();
+
+
+}
+
+
+
+
+function Front() { //Read the elements of the team head and the end of the team
+
+
+    return this.datastore[0];
+
+
+}
+
+
+function back() { ////reads the elements of the team head and the end of the team
+
+
+    return This.datastore[this.datastore.length - 1]
+
+
+}
+
+
+
+function toString() {
+
+
+    var retstr = "";
+
+
+    for (var i = 0; i & lt; this.dataStore.length; ++i) {
+
+
+        Retstr + = This.datastore[i] + "\ n";
+
+
+    }
+
+
+    Return RETSTR
+
+
+}
+
+
+function empty() {
+
+
+    if (This.dataStore.length = = 0) {
+
+
+        return true;
+
+
+    } else {
+
+
+        return false;
+
+
+    }
+
+
+}
+
+
+function count() {
+
+
+    return this.dataStore.length;
+
+
+}
+
+
+
+
+function dancer(name, sex) {
+
+
+    THIS.name = name;
+
+    This.sex = sex;
+}
+
+function getdancers(males, females) {
+    var names = _names.split("\ n");
+    var names = _names.split("* *");
+    for (var i = 0; i & lt; names.length; ++i) {
+        Names[i] = Names[i].trim();
+    }
+    for (var i = 0; i & lt; names.length; ++i) {
+        var dancer = Names[i].split("");
+        var sex = dancer[0];
+        var name = dancer[1];
+        if (sex = = "female") {
+            Females.enqueue(New dancer(name, sex));
+        } else {
+            Males.enqueue(New dancer(name, sex))
+        }
+    }
+}
+
+function dance(males, females) {
+    Console.log("This group of Partners is:")
+    while (!females.empty() & amp; & amp; !males.empty()) {
+        person = Females.dequeue();
+        Console.log("Female dancer is" + person.name);
+        person = Males.dequeue();
+        Console.log("Male dancer is" + person.name);
+    }
+
+}
+
+
