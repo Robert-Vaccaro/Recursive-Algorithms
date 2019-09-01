@@ -1,0 +1,171 @@
+How many searches?
+
+function binarySearch(array, value, start, end) {
+    var start = start === undefined ? 0 : start;
+    var end = end === undefined ? array.length : end;
+
+    if (start > end) {
+        return -1;
+    }
+
+    const index = Math.floor((start + end) / 2);
+    const item = array[index];
+
+    console.log(start, end);
+    if (item == value) {
+        return index;
+    }
+    else if (item < value) {
+        return binarySearch(array, value, index + 1, end);
+    }
+    else if (item > value) {
+        return binarySearch(array, value, start, index - 1);
+    }
+};
+
+arr = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18];
+value1 = 8;
+value2 = 16;
+binarySearch(arr, value1);
+binarySearch(arr, value2);
+
+
+Adding a React UI
+
+arr = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48, 32, 26, 2, 14, 33, 45, 72, 56, 44, 21, 88, 27, 68, 15, 62, 93, 98, 73, 28, 16, 46, 87, 28, 65, 38, 67, 16, 85, 63, 23, 69, 64, 91, 9, 70, 81, 27, 97, 82, 6, 88, 3, 7, 46, 13, 11, 64, 76, 31, 26, 38, 28, 13, 17, 69, 90, 1, 6, 7, 64, 43, 9, 73, 80, 98, 46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 54, 84, 34, 53, 78, 40, 14, 5];
+arr = arr.sort();
+function binarySearch(array, value, start, end) {
+    var start = start === undefined ? 0 : start;
+    var end = end === undefined ? array.length : end;
+
+    if (start > end) {
+        return -1;
+    }
+
+    const index = Math.floor((start + end) / 2);
+    const item = array[index];
+
+    console.log(start, end);
+    if (item == value) {
+        return index;
+    }
+    else if (item < value) {
+        return binarySearch(array, value, index + 1, end);
+    }
+    else if (item > value) {
+        return binarySearch(array, value, start, index - 1);
+    }
+};
+
+function indexOf(array, value) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == value) {
+            return i;
+        }
+    }
+    return -1;
+};
+value1 = 7;
+$('.bin').append(binarySearch(arr, value1));
+$('.lin').append(indexOf(arr, value1));
+
+
+Find a book
+
+I would use binary search and go through the decimal system from the center. 
+Then go down or up from their to cut my time have each time, making it logarithmic.
+
+
+1) Given a binary search tree whose in-order and pre-order traversals are respectively 
+14 15 19 25 27 35 79 89 90 91 and 35 25 15 14 19 27 89 79 91 90. What would be its postorder traversal?
+
+
+5 and 6.)
+
+preOrder() {
+   preOrderHelper(this.root);
+}
+
+function preOrderHelper(root) {
+   if (root !== null) {
+      console.log(root.data);
+      preOrderHelper(root.left);
+      preOrderHelper(root.right);
+   }
+}
+BST.preOrder();
+
+postOrder() {
+   postOrderHelper(this.root);
+}
+
+function postOrderHelper(root) {
+   if (root !== null) {
+      postOrderHelper(root.left);
+      postOrderHelper(root.right);
+      console.log(root.data);
+   }
+}
+
+inOrder() {
+   inOrderHelper(this.root);
+}
+
+function inOrderHelper(root) {
+   if (root !== null) {
+      inOrderHelper(root.left);
+      console.log(root.data);
+      inOrderHelper(root.right);
+   }
+}
+
+
+7.) Max profit
+function StockPicker(arr) { 
+  
+  var max_profit = -1;
+  var buy_price = 0;
+  var sell_price = 0;
+  
+  // this allows our loop to keep iterating the buying
+  // price until a cheap stock price is found
+  var change_buy_index = true;
+  
+  // loop through list of stock prices once
+  for (var i = 0; i < arr.length-1; i++) {
+    
+    // selling price is the next element in list
+    sell_price = arr[i+1]; 
+    
+    // if we have not found a suitable cheap buying price yet
+    // we set the buying price equal to the current element
+    if (change_buy_index) { buy_price = arr[i]; }
+    
+    // if the selling price is less than the buying price
+    // we know we cannot make a profit so we continue to the 
+    // next element in the list which will be the new buying price
+    if (sell_price < buy_price) {
+      change_buy_index = true; 
+      continue;
+    }
+    
+    // if the selling price is greater than the buying price
+    // we check to see if these two indices give us a better 
+    // profit then what we currently have
+    else { 
+      var temp_profit = sell_price - buy_price;
+      if (temp_profit > max_profit) { max_profit = temp_profit; }
+      change_buy_index = false;
+    }
+    
+  }
+  
+  return max_profit;
+         
+}
+
+console.log(StockPicker([44, 30, 24, 32, 35, 30, 40, 38, 15])); 
+
+
+8.) In real life, the egg would break at all floors. 
+In then coding world, I would use Binary Search.
